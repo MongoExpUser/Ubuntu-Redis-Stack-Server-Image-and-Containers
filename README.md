@@ -5,13 +5,26 @@
 <br><br>
 
 
- ### 1) Build Image                  
-     * Add                                                                                                                 
-     * Add                                                                                                                 
-     * ADD  
+### 1) Build Image:                                                                                             
+     * Build
+     sudo docker build --no-cache -t iot/ubuntu-22.04-redis-stack-server-6.2.6-v7:latest .                                                  
+     
  ### 2) Deploy Container:                                                                                             
-     * DD                                                      
-     * DD       
+     * Deploy containers with docker compose
+     set PWD=%cd% && sudo docker compose -f docker-compose-redis.yml --project-directory $PWD --project-name "iot-app" up -d
+
+     * stop and remove containers with related network
+     set PWD=%cd% && sudo docker compose -f docker-compose-redis.yml --project-directory $PWD --project-name "iot-app" down
+
+     * stop services
+     set PWD=%cd% && sudo docker compose -f docker-compose-redis.yml --project-directory $PWD --project-name "iot-app" stop
+
+     * start services
+     set PWD=%cd% && sudo docker compose -f docker-compose-redis.yml --project-directory $PWD --project-name "iot-app" start
+
+      * logs: view output from containers
+      set PWD=%cd% && sudo docker compose -f docker-compose-redis.yml --project-directory $PWD --project-name "iot-app" logs 
+      
  ### 3) Check Logs From Inside the Host - <strong> FIRST CHECK AFTER DEPOYMENT</strong>:                                                                                             
      * Redis Nodes
        * aa
