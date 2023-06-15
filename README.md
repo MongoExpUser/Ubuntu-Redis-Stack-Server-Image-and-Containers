@@ -9,11 +9,9 @@
      * Add                                                                                                                 
      * Add                                                                                                                 
      * ADD  
-     
  ### 2) ### Deploy Container:                                                                                             
      * DD                                                      
      * DD       
-
  ### 3) Check Logs From Inside the Host - <strong> FIRST CHECK AFTER DEPOYMENT</strong>:                                                                                             
      * Redis Nodes
        * aa
