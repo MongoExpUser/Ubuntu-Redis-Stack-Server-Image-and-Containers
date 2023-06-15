@@ -83,7 +83,6 @@ RUN sudo apt-get -y update && apt-get -y upgrade \
     #  b. redis sentinel
     && sudo apt-get -y update \
     && sudo apt-get -y install redis-sentinel \
-    # && sudo mkdir /run/sentinel \
     && sudo chmod 777 /run \
     # && sudo chmod 777 /run/sentinel \
     && sudo chmod 777 /var/lib/redis \
