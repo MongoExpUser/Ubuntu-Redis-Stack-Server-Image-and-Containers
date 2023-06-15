@@ -9,11 +9,11 @@
      * Build
      sudo docker build --no-cache -t iot/ubuntu-22.04-redis-stack-server-6.2.6-v7:latest .
      
- ### 2) Deploy Container:                                                                                             
-     * Deploy containers with docker compose
+ ### 2) Deploy Container with Docker Compose:                                                                                             
+     * Deploy container 
      set PWD=%cd% && sudo docker compose -f docker-compose-redis.yml --project-directory $PWD --project-name "iot-app" up -d
      
-     * stop and remove containers with related network
+     * stop and remove container with related network
      set PWD=%cd% && sudo docker compose -f docker-compose-redis.yml --project-directory $PWD --project-name "iot-app" down
      
      * stop services
@@ -34,7 +34,7 @@
      sudo docker exec -it sentinel-node1 /bin/bash -c "sudo tail -n 600  /var/log/redis/redis-sentinel.log"
      sudo docker exec -it sentinel-node2 /bin/bash -c "sudo tail -n 600  /var/log/redis/redis-sentinel.log"
      sudo docker exec -it sentinel-node3 /bin/bash -c "sudo tail -n 600  /var/log/redis/redis-sentinel.log"
- ### 4) Interact with Containers/SSH into Container:                                                                                             
+ ### 4) Interact with Container/SSH into Container:                                                                                             
      * Redis Nodes
      sudo docker exec -it redis-node1 /bin/bash
      sudo docker exec -it redis-node2 /bin/bash
