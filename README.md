@@ -1,7 +1,7 @@
-# Ubuntu-Redis-Stack-Server-Image-and-Container
-## Redis Stack Server with Auto Failover 
+# Ubuntu-Redis-Stack-Server-Image-and-Containers
+## Redis Stack Servers with Auto Failover 
 
-<strong> Create Image and Deploy Container for Redis Stack Servers (1 Primary and 2 Replicas) with Auto Failover for an IOT Application.</strong>
+<strong> Create Image and Deploy Containers for Redis Stack Servers (1 Primary and 2 Replicas) with Auto Failover for an IOT Application.</strong>
 <br><br>
 
 
@@ -9,11 +9,11 @@
      * Build
      sudo docker build --no-cache -t iot/ubuntu-22.04-redis-stack-server-6.2.6-v7:latest .
      
- ### 2) Deploy Container with Docker Compose:                                                                                             
-     * Deploy container 
+ ### 2) Deploy Containers with Docker Compose:                                                                                             
+     * Deploy containers 
      set PWD=%cd% && sudo docker compose -f docker-compose-redis.yml --project-directory $PWD --project-name "iot-app" up -d
      
-     * stop and remove container with related network
+     * stop and remove containers with related network
      set PWD=%cd% && sudo docker compose -f docker-compose-redis.yml --project-directory $PWD --project-name "iot-app" down
      
      * stop services
@@ -34,7 +34,7 @@
      sudo docker exec -it sentinel-node1 /bin/bash -c "sudo tail -n 600  /var/log/redis/redis-sentinel.log"
      sudo docker exec -it sentinel-node2 /bin/bash -c "sudo tail -n 600  /var/log/redis/redis-sentinel.log"
      sudo docker exec -it sentinel-node3 /bin/bash -c "sudo tail -n 600  /var/log/redis/redis-sentinel.log"
- ### 4) Interact with Container/SSH into Container:                                                                                             
+ ### 4) Interact with Containers/SSH into Containers:                                                                                             
      * Redis Nodes
      sudo docker exec -it redis-node1 /bin/bash
      sudo docker exec -it redis-node2 /bin/bash
@@ -44,7 +44,7 @@
      sudo docker exec -it sentinel-node1 /bin/bash
      sudo docker exec -it sentinel-node2 /bin/bash
      sudo docker exec -it sentinel-node3 /bin/bash
-  ### 5) Connect to Redis and Sentinel Servers Inside the Container:                                                                                          
+  ### 5) Connect to Redis and Sentinel Servers Inside the Containers:                                                                                          
      * Redis Nodes
      redis-cli --raw -h localhost -p 6379 --tls --cert /etc/ssl/certs/server.crt --key /etc/ssl/certs/server.key --cacert /etc/ssl/certs/root.crt -a 
 
