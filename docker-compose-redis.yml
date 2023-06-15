@@ -1,0 +1,218 @@
+# ***************************************************************************************************************************************
+# * docker-compose-redis.yml                                                                                                            *
+#  **************************************************************************************************************************************
+#  *                                                                                                                                    *
+#  * @License Starts                                                                                                                    *
+#  *                                                                                                                                    *
+#  * Copyright © 2023. MongoExpUser.  All Rights Reserved.                                                                              *
+#  *                                                                                                                                    *
+#  * License: MIT - https://github.com/MongoExpUser/Ubuntu-Redis-Stack-Server-Image-and-Container/blob/main/LICENSE                     *
+#  *                                                                                                                                    *
+#  * @License Ends                                                                                                                      *
+#  **************************************************************************************************************************************
+# *                                                                                                                                     *
+# *  Project: Ubuntu-Redis-Stack Image & Container Project                                                                              *
+# *                                                                                                                                     *
+# *  This docker compose file deploys:                                                                                                  *
+# *                                                                                                                                     *                                                                                                              *
+# *     1)  Redis Stack Server: 1 primary instance and 2 replica instances                                                              *
+# *                                                                                                                                     *
+# *     2)  Redis Sentinel (monitor) for Automatic Failover: 3 instances                                                                *
+# *                                                                                                                                     *
+# *  Versions:                                                                                                                          *
+# *                                                                                                                                     *
+# *     1) Redis Stack Server (v6.2.6-v7)                                                                                               *
+# *                                                                                                                                     *
+# *     2) Redis Sentinel (v2)                                                                                                          *
+# *                                                                                                                                     *
+# *   Images name: iot/ubuntu-22.04-redis-stack-server-6.2.6-v7:latest                                                                  *
+# *                                                                                                                                     *
+# *   Redis Stack Server's Modules include: JSON, Timeseries, Graph, Search & Bloom Filters                                             *
+# *                                                                                                                                     *                                                                                                                             *
+# *                                                                                                                                     *
+# ***************************************************************************************************************************************
+
+
+version: "3.9"
+services:
+  redis-node1:
+    image: iot/ubuntu-22.04-redis-stack-server-6.2.6-v7:latest
+    command: redis-server /etc/redis-stack.conf && --appenddirname appendonlydir
+    container_name: redis-node1
+    restart: always
+    volumes:
+      # map config file(s) from source dir
+      - ./source-sid-1/redis-stack.conf:/etc/redis-stack.conf
+      # map server and client tls certs from tls dir
+      - ./tls/server.crt:/etc/ssl/certs/server.crt
+      - ./tls/server.key:/etc/ssl/certs/server.key
+      - ./tls/root.crt:/etc/ssl/certs/root.crt
+      - ./tls/client.crt:/etc/ssl/certs/client.crt
+      - ./tls/client.key:/etc/ssl/certs/client.key
+      #  map app dir
+      - ./app:/home/app
+      # create redis-stack's data, log & pid dirs/volumes
+      - data1:/var/lib/redis-stack
+      - log1:/var/log
+      - pid1:/var/run
+      # map AI module from source dir/volume
+      #./source-sid-1/redisai.so:/opt/redis-stack/lib/redisai.so - Add AI module later
+    ports:
+      -  6379:6379
+      -  8080:80
+    networks:
+      - redis-network
+  redis-node2:
+    image: iot/ubuntu-22.04-redis-stack-server-6.2.6-v7:latest
+    depends_on:
+      - redis-node1
+    command: redis-server /etc/redis-stack.conf && --appenddirname appendonlydir
+    container_name: redis-node2
+    restart: always
+    volumes:
+      # map config file(s) from source dir
+      - ./replica-sid-2/redis-stack.conf:/etc/redis-stack.conf
+      # map server and client tls certs from tls dir
+      - ./tls/server.crt:/etc/ssl/certs/server.crt
+      - ./tls/server.key:/etc/ssl/certs/server.key
+      - ./tls/root.crt:/etc/ssl/certs/root.crt
+      - ./tls/client.crt:/etc/ssl/certs/client.crt
+      - ./tls/client.key:/etc/ssl/certs/client.key
+      #  map app dir
+      - ./app:/home/app
+      # create redis-stack's data, log & pid dirs/volumes
+      - data2:/var/lib/redis-stack
+      - log2:/var/log
+      - pid2:/var/run
+    ports:
+      -  6380:6379
+      -  8081:80
+    networks:
+      - redis-network
+  redis-node3:
+    image: iot/ubuntu-22.04-redis-stack-server-6.2.6-v7:latest
+    depends_on:
+      - redis-node2
+    command: redis-server /etc/redis-stack.conf && --appenddirname appendonlydir
+    container_name: redis-node3
+    restart: always
+    volumes:
+      # map config file(s) from source dir
+      - ./replica-sid-3/redis-stack.conf:/etc/redis-stack.conf
+      # map server and client tls certs from tls dir
+      - ./tls/server.crt:/etc/ssl/certs/server.crt
+      - ./tls/server.key:/etc/ssl/certs/server.key
+      - ./tls/root.crt:/etc/ssl/certs/root.crt
+      - ./tls/client.crt:/etc/ssl/certs/client.crt
+      - ./tls/client.key:/etc/ssl/certs/client.key
+      #  map app dir
+      - ./app:/home/app
+      # create redis-stack's data, log & pid dirs/volumes
+      - data3:/var/lib/redis-stack
+      - log3:/var/log
+      - pid3:/var/run
+    ports:
+      -  6381:6379
+      -  8082:80
+    networks:
+      - redis-network
+  sentinel-node1:
+    image: iot/ubuntu-22.04-redis-stack-server-6.2.6-v7:latest
+    depends_on:
+      - redis-node3
+    command: redis-server /etc/redis/sentinel.conf --sentinel
+    container_name: sentinel-node1
+    restart: always
+    volumes:
+      # map config file(s) from source dir
+      - ./source-sid-1/sentinel.conf:/etc/redis/sentinel.conf
+      # map server and client tls certs from tls dir
+      - ./tls/server.crt:/etc/ssl/certs/server.crt
+      - ./tls/server.key:/etc/ssl/certs/server.key
+      - ./tls/root.crt:/etc/ssl/certs/root.crt
+      - ./tls/client.crt:/etc/ssl/certs/client.crt
+      - ./tls/client.key:/etc/ssl/certs/client.key
+      # create sentinel's data, log & pid dirs/volumes
+      - data1_sentinel:/var/lib/redis
+      - log1_sentinel:/var/log/redis
+      - pid1_sentinel:/run/sentinel
+    ports:
+      -  26379:26379
+    networks:
+      - redis-network
+  sentinel-node2:
+    image: iot/ubuntu-22.04-redis-stack-server-6.2.6-v7:latest
+    depends_on:
+      - sentinel-node1
+    command: redis-server /etc/redis/sentinel.conf --sentinel
+    container_name: sentinel-node2
+    restart: always
+    volumes:
+      # map config file(s) from source dir
+      - ./replica-sid-2/sentinel.conf:/etc/redis/sentinel.conf
+      # map server and client tls certs from tls dir
+      - ./tls/server.crt:/etc/ssl/certs/server.crt
+      - ./tls/server.key:/etc/ssl/certs/server.key
+      - ./tls/root.crt:/etc/ssl/certs/root.crt
+      - ./tls/client.crt:/etc/ssl/certs/client.crt
+      - ./tls/client.key:/etc/ssl/certs/client.key
+      # create sentinel's data, log & pid dirs/volumes
+      - data2_sentinel:/var/lib/redis
+      - log2_sentinel:/var/log/redis
+      - pid2_sentinel:/run/sentinel
+    ports:
+      -  26380:26379
+    networks:
+      - redis-network
+  sentinel-node3:
+    image: iot/ubuntu-22.04-redis-stack-server-6.2.6-v7:latest
+    depends_on:
+      - sentinel-node2
+    command: redis-server /etc/redis/sentinel.conf --sentinel
+    container_name: sentinel-node3
+    restart: always
+    volumes:
+      # map config file(s) from source dir
+      - ./replica-sid-3/sentinel.conf:/etc/redis/sentinel.conf
+      # map server and client tls certs from tls dir
+      - ./tls/server.crt:/etc/ssl/certs/server.crt
+      - ./tls/server.key:/etc/ssl/certs/server.key
+      - ./tls/root.crt:/etc/ssl/certs/root.crt
+      - ./tls/client.crt:/etc/ssl/certs/client.crt
+      - ./tls/client.key:/etc/ssl/certs/client.key
+      # create sentinel's data, log & pid dirs/volumes
+      - data3_sentinel:/var/lib/redis
+      - log3_sentinel:/var/log/redis
+      - pid3_sentinel:/run/sentinel
+    ports:
+      -  26381:26379
+    networks:
+      - redis-network
+networks:
+  redis-network:
+    name: redis-net
+volumes:
+  # redis-node1-vol
+  data1:
+  log1:
+  pid1:
+  # redis-node2-vol
+  data2:
+  log2:
+  pid2:
+  # redis-node3-vol
+  data3:
+  log3:
+  pid3:
+  # sentinel-node1-vol
+  data1_sentinel:
+  log1_sentinel:
+  pid1_sentinel:
+  # sentinel-node2-vol
+  data2_sentinel:
+  log2_sentinel:
+  pid2_sentinel:
+  # sentinel-node3-vol
+  data3_sentinel:
+  log3_sentinel:
+  pid3_sentinel:
