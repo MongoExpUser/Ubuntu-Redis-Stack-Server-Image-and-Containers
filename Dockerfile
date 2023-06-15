@@ -4,7 +4,7 @@
 #  *                                                                                                                                    *
 #  * @License Starts                                                                                                                    *
 #  *                                                                                                                                    *
-#  * Copyright © 2015 - present. MongoExpUser.  All Rights Reserved.                                                                    *
+#  * Copyright © 2023. MongoExpUser.  All Rights Reserved.                                                                              *
 #  *                                                                                                                                    *
 #  * License: MIT - https://github.com/MongoExpUser/Ubuntu-Ubuntu-Redis-Stack-Server-Image-and-Container/blob/main/LICENSE              *
 #  *                                                                                                                                    *
