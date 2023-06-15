@@ -68,7 +68,7 @@ RUN sudo apt-get -y update && apt-get -y upgrade \
     && sudo apt-get install -y iputils-ping certbot python3-certbot-apache gnupg gnupg2 telnet \
     && sudo apt-get install -y aptitude build-essential gcc make screen snapd spamc parted openssl   \
     && sudo apt-get install -y systemd procps spamassassin \
-    #  2. redis-stack-server (6.2.12) & sentinel (v2)
+    #  2. redis-stack-server (6.2.6) & sentinel (v2)
     #  a. redis-stack-server
     && curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg \
     && sudo chmod 644 /usr/share/keyrings/redis-archive-keyring.gpg \
