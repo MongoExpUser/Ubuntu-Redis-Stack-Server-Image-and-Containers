@@ -1,7 +1,7 @@
 # Ubuntu-Redis-Stack-Server-Image-and-Container
 ## Redis Stack Server with Auto Failover 
 
-<strong> Create Image and Deploy Containers for Redis Stack Servers (1 Primary and 2 Replicas) with Auto Failover for an IOT Application.</strong>
+<strong> Create Image and Deploy Container for Redis Stack Servers (1 Primary and 2 Replicas) with Auto Failover for an IOT Application.</strong>
 <br><br>
 
 
