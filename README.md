@@ -9,7 +9,7 @@
      * Add                                                                                                                 
      * Add                                                                                                                 
      * ADD  
- ### 2) ### Deploy Container:                                                                                             
+ ### 2) Deploy Container:                                                                                             
      * DD                                                      
      * DD       
  ### 3) Check Logs From Inside the Host - <strong> FIRST CHECK AFTER DEPOYMENT</strong>:                                                                                             
@@ -33,7 +33,6 @@
      * Sentinel Nodes   
        * aa
        * bb <br>
-
   ### 6) Check Configuration Information: Run Directly with Bash                                                                                                                    
      * Redis Nodes
        * aa
