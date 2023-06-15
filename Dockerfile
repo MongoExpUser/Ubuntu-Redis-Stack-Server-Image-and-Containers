@@ -6,12 +6,12 @@
 #  *                                                                                                                                    *
 #  * Copyright © 2023. MongoExpUser.  All Rights Reserved.                                                                              *
 #  *                                                                                                                                    *
-#  * License: MIT - https://github.com/MongoExpUser/Ubuntu-Ubuntu-Redis-Stack-Server-Image-and-Container/blob/main/LICENSE              *
+#  * License: MIT - https://github.com/MongoExpUser/Ubuntu-Ubuntu-Redis-Stack-Server-Image-and-Containers/blob/main/LICENSE              *
 #  *                                                                                                                                    *
 #  * @License Ends                                                                                                                      *
 #  **************************************************************************************************************************************
 # *                                                                                                                                     *
-# *  Project: Ubuntu-Redis-Stack-Server Image & Container Project                                                                       *
+# *  Project: Ubuntu-Redis-Stack-Server Image & Containers Project                                                                      *
 # *                                                                                                                                     *
 # *  This Dockerfile creates an image based on:                                                                                         *
 # *                                                                                                                                     *                                                                                                              *
