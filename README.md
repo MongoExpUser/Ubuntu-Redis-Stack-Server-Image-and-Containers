@@ -34,7 +34,7 @@
      sudo docker exec -it sentinel-node1 /bin/bash -c "sudo tail -n 600  /var/log/redis/redis-sentinel.log"
      sudo docker exec -it sentinel-node2 /bin/bash -c "sudo tail -n 600  /var/log/redis/redis-sentinel.log"
      sudo docker exec -it sentinel-node3 /bin/bash -c "sudo tail -n 600  /var/log/redis/redis-sentinel.log"
- ### 4) Interact with Containers/SSH into Containers:                                                                                             
+ ### 4) Interact with Containers:                                                                                             
      * Redis Nodes
      sudo docker exec -it redis-node1 /bin/bash
      sudo docker exec -it redis-node2 /bin/bash
