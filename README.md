@@ -5,7 +5,7 @@
 <br><br>
 
 # Architectural Diagram
-![Image description](https://github.com/MongoExpUser/Ubuntu-Redis-Stack-Server-Image-and-Containers/blob/master/redis-stack-server-sentinel.png) 
+![Image description]([https://github.com/MongoExpUser/Ubuntu-Redis-Stack-Server-Image-and-Containers/blob/master/redis-stack-server-sentinel.png](https://github.com/MongoExpUser/Ubuntu-Redis-Stack-Server-Image-and-Containers/blob/main/redis-stack-server-sentinel.png)) 
 
 
 ### 1) Build Image:                                                                                             
