@@ -7,7 +7,6 @@
 # Architectural Diagram
 ![Image description](https://github.com/MongoExpUser/Ubuntu-Redis-Stack-Server-Image-and-Containers/blob/main/redis-stack-server-sentinel.png)
 
-
 ### 1) Build Image:                                                                                             
      * Build
      sudo docker build --no-cache -t iot/ubuntu-22.04-redis-stack-server-6.2.6-v7:latest .
