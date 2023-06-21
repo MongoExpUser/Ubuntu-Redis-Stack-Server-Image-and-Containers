@@ -24,11 +24,11 @@
 # *                                                                                                                                     *
 # *     2) Add relevant NodeJS native routes                                                                                            *
 # *                                                                                                                                     *
-# *     2) Add routes to applications written in other language (Python, Java, PHP, Rust, C, etc.)                                      *
+# *     3) Add routes to applications written in other language (Python, Java, PHP, Rust, C, etc.)                                      *
 # *                                                                                                                                     *                                                                                                                                     *
-# *     3) Ensure handlers for returning reponse from applications written in other languages are included.                             *
+# *     4) Ensure handlers for returning reponse from applications written in other languages are included.                             *
 # *                                                                                                                                     *                                                                                                                                     *
-# *     3) Add relevant web server codes (.html, .css and .js codes)                                                                    *
+# *     5) Add relevant web server codes (.html, .css and .js codes)                                                                    *
 # *                                                                                                                                     *                                                                                                                             *
 # *  Note that:                                                                                                                         *
 # *                                                                                                                                     *
