@@ -24,7 +24,7 @@
 # *                                                                                                                                     *
 # *     2) Add relevant NodeJS native routes                                                                                            *
 # *                                                                                                                                     *
-# *     3) Add routes to applications written in other language (Python, Java, PHP, Rust, C, etc.)                                      *
+# *     3) Add routes to applications written in other languages (Python, Java, PHP, Rust, C, etc.)                                     *
 # *                                                                                                                                     *                                                                                                                                     *
 # *     4) Ensure handlers for returning reponse from applications written in other languages are included.                             *
 # *                                                                                                                                     *                                                                                                                                     *
@@ -156,8 +156,8 @@ class AppVanilla
             }
             else
             {
-                //const secureServer = spdy.createServer(objs.commonOptionsSSL(), function handleRequest(request, response)  -- for tls deployment (option 1) - for http2 features
-                //const secureServer = https.createServer(objs.commonOptionsSSL(), function handleRequest(request, response) -- for tls deployment (option 2) 
+                //const secureServer = spdy.createServer(objs.commonOptionsSSL(), function handleRequest(request, response)  -- for tls/ssl deployment (option 1) - for http2 features
+                //const secureServer = https.createServer(objs.commonOptionsSSL(), function handleRequest(request, response) -- for tls/ssl deployment (option 2) 
                 const server = http.createServer(function handleRequest(request, response)
                 {
                     // common variables
@@ -210,7 +210,7 @@ class AppVanilla
                     });
                 });
 
-                //secureServer.listen(sslPort, function listenOnServer() { console.log(`Server listening on https://${host}:${sslPort}/ ...`) }).setMaxListeners(0); -- for tls deployment
+                //secureServer.listen(sslPort, function listenOnServer() { console.log(`Server listening on https://${host}:${sslPort}/ ...`) }).setMaxListeners(0); -- for tls/ssl deployment
                 server.listen(port, function listenOnServer() { console.log(`Server listening on https://${host}:${port}/ ...`) }).setMaxListeners(0);
             }
 
