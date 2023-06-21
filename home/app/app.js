@@ -199,8 +199,17 @@ class AppVanilla
                         //add more routes an deem necessary
                         // ..
                         // ..
+                        //
+                        //createdRoutes.IotWeatherData(post, request, response);                               // iot route 1
+                        //createdRoutes.IotReservoirProductionData(post, request, response);                   // iot route 2
+                        //createdRoutes.IotDrillingData(post, request, response);                              // iot route 3
+                        //createdRoutes.IotVideoStreamsData(post, request, response);                          // iot route 4
+                        //createdRoutes.IotTrafficData(post, request, response);                               // iot route 5
+                        //createdRoutes.IotAnalyze(post, request, response);                                   // iot route 6
+                        //..
+                        //..
                         //createdRoutes.ServeStaticFilesVanilla(get, request, response, staticFileOptions);   // static file server as routes: should come last
-
+                        
                         
                         // server html response example (for testing)
                         const html = "<center><p><h2>Successful Web Server Deployment!</h2><p/></center>";
