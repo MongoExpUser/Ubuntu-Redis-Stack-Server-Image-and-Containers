@@ -32,7 +32,7 @@
 # *                                                                                                                                     *                                                                                                                             *
 # *  Note that:                                                                                                                         *
 # *                                                                                                                                     *
-# *     1) This module is just a demonstration. Hence, relevant proprietary codes have been removed or commented out.                   *
+# *     1) This module is a demonstration. Hence, relevant middlewares and routes proprietary codes have been removed or commented out. *
 # *                                                                                                                                     *
 # *     2) Irrespective of open or proprietary implementations, the program's architecture remains thesame.                             *
 # *                                                                                                                                     *
@@ -156,7 +156,8 @@ class AppVanilla
             }
             else
             {
-                //const secureServer = spdy.createServer(objs.commonOptionsSSL(), function handleRequest(request, response) -- for tls deployment
+                //const secureServer = spdy.createServer(objs.commonOptionsSSL(), function handleRequest(request, response)  -- for tls deployment (option 1) - for http2 features
+                //const secureServer = https.createServer(objs.commonOptionsSSL(), function handleRequest(request, response) -- for tls deployment (option 2) 
                 const server = http.createServer(function handleRequest(request, response)
                 {
                     // common variables
