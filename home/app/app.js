@@ -167,7 +167,7 @@ class AppVanilla
                     //let staticFileOptions =  objs.commonVariables().staticFileOptions;
                     let body = [];
                 
-                    // 1. parse body (i.e add body to request)
+                    // 1. parse body (i.e add body to request) - simple body parser
                     request.on("error", function (err)
                     {
                       console.error(err);
