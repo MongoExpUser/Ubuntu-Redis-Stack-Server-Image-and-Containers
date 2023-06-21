@@ -105,8 +105,8 @@ class AppVanilla
                 console.log("Worker OS CPU architecture  : " + os.arch());                         // log the os CPU/core architecture.
                 console.log("Worker OS platform          : " + os.platform());                     // log the os platform/name/type
                 console.log("Worker OS release           : " + os.release());                      // log the os release.
-                console.log("Worker OS free memory       : " + os.freemem());                      // log the os free memomry.
-                console.log("Worker OS total memory      : " + os.totalmem());                     // log the os total memomry.
+                console.log("Worker OS free memory       : " + os.freemem());                      // log the os free memory.
+                console.log("Worker OS total memory      : " + os.totalmem());                     // log the os total memory.
                 console.log("=================================");
             }
         
