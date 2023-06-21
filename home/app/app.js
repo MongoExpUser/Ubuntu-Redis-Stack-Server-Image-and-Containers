@@ -199,7 +199,7 @@ class AppVanilla
                         //add more routes an deem necessary
                         // ..
                         // ..
-                        //
+                        // iot routes
                         //createdRoutes.IotWeatherData(post, request, response);                               // iot route 1
                         //createdRoutes.IotReservoirProductionData(post, request, response);                   // iot route 2
                         //createdRoutes.IotDrillingData(post, request, response);                              // iot route 3
