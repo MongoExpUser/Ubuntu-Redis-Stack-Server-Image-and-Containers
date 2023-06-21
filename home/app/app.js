@@ -30,7 +30,7 @@
 # *                                                                                                                                     *                                                                                                                                     *
 # *     5) Add relevant web server codes (.html, .css and .js codes)                                                                    *
 # *                                                                                                                                     *                                                                                                                             *
-# *  Note that:                                                                                                                         *
+# *  Note:                                                                                                                              *
 # *                                                                                                                                     *
 # *     1) This module is a demonstration. Hence, relevant middlewares and routes proprietary codes have been removed or commented out. *
 # *                                                                                                                                     *
