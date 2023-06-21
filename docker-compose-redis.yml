@@ -15,7 +15,7 @@
 # *                                                                                                                                     *
 # *  This docker compose file deploys:                                                                                                  *
 # *                                                                                                                                     *                                                                                                              *
-# *     1)  Redis Stack Servers: 1 primary instance and 2 replica instances                                                             *
+# *     1)  Redis Stack Server: 1 primary instance and 2 replica instances                                                              *
 # *                                                                                                                                     *
 # *     2)  Redis Sentinel (monitor) for Automatic Failover: 3 instances                                                                *
 # *                                                                                                                                     *
@@ -59,7 +59,6 @@ services:
       #./source-sid-1/redisai.so:/opt/redis-stack/lib/redisai.so - Add AI module later
     ports:
       -  6379:6379
-      -  8080:80
     networks:
       - redis-network
   redis-node2:
@@ -86,7 +85,6 @@ services:
       - pid2:/var/run
     ports:
       -  6380:6379
-      -  8081:80
     networks:
       - redis-network
   redis-node3:
@@ -113,7 +111,6 @@ services:
       - pid3:/var/run
     ports:
       -  6381:6379
-      -  8082:80
     networks:
       - redis-network
   sentinel-node1:
@@ -186,6 +183,19 @@ services:
       - pid3_sentinel:/run/sentinel
     ports:
       -  26381:26379
+    networks:
+      - redis-network
+  app-node:
+    image: iot/ubuntu-22.04-redis-stack-server-6.2.6-v7:latest
+    command: sudo node /home/app/app.js
+    depends_on:
+      - sentinel-node3
+    container_name: app-node
+    restart: always
+    volumes:
+      - ./app:/home/app
+    ports:
+      -  8080:80
     networks:
       - redis-network
 networks:
