@@ -191,11 +191,6 @@ class AppVanilla
                         //createdMiddlewares.LoggerVanilla(request, response);                                // logger middlware, like morgan
                         //createdMiddlewares.BasicAuthenticationVanilla(request, response);                   // basic authentication middleware: should come after "logger" middleware (optional)
 
-                        // server html example (for testing)
-                        const html = "<center><p><h2>Successful Web Server Deployment!</h2><p/></center>";
-                        response.writeHead(200, { "Content-Type" : "text/html" });
-                        response.end(html);
-
                         // 3. routes
                         //createdRoutes.NodePythonJavaOthersVanilla(post, request, response);                  // invoke Python, Java, PHP, etc. codes' route as middleware
                         //createdRoutes.ProxyServerVanilla(get, request, response);                            // proxy Server routes as middelware: should come after "Basic Authentication" (if Basic-Authen is included as middlewate)
@@ -203,6 +198,13 @@ class AppVanilla
                         // ..
                         // ..
                         //createdRoutes.ServeStaticFilesVanilla(get, request, response, staticFileOptions);   // static file server as routes: should come last
+
+                        
+                        // server html responseexample (for testing)
+                        const html = "<center><p><h2>Successful Web Server Deployment!</h2><p/></center>";
+                        response.writeHead(200, { "Content-Type" : "text/html" });
+                        response.end(html);
+                    
                     });
                 });
 
