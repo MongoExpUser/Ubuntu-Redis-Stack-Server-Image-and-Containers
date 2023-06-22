@@ -32,7 +32,7 @@
 # *                                                                                                                                     *                                                                                                                             *
 # *  Note:                                                                                                                              *
 # *                                                                                                                                     *
-# *     1) This module is a demonstration. Hence, relevant middlewares and routes proprietary codes have been removed or commented out. *
+# *     1) This module is a demo. Hence, relevant middlewares' and routes' proprietary codes have been removed or commented out         *
 # *                                                                                                                                     *
 # *     2) Irrespective of open or proprietary implementations, the program's architecture remains thesame.                             *
 # *                                                                                                                                     *
