@@ -187,7 +187,7 @@ services:
       - redis-network
   app-node:
     image: iot/ubuntu-22.04-redis-stack-server-6.2.6-v7:latest
-    command: sudo node /home/app/app.js
+    command: sudo node --max-old-space-size=4096 /home/app/app.js
     depends_on:
       - sentinel-node3
     container_name: app-node
