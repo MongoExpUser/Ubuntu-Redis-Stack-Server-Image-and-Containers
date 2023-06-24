@@ -187,6 +187,8 @@ services:
       - redis-network
   app-node:
     image: iot/ubuntu-22.04-redis-stack-server-6.2.6-v7:latest
+    # set 'max-old-space-size' based on available memory
+    # see: https://nodejs.org/api/cli.html#--max-old-space-sizesize-in-megabytes
     command: sudo node --max-old-space-size=4096 /home/app/app.js
     depends_on:
       - sentinel-node3
