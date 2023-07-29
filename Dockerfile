@@ -93,9 +93,9 @@ RUN sudo apt-get -y update && apt-get -y upgrade \
     && sudo apt-get -y install python3  \
     #  4. python3-pip
     && sudo apt-get -y install python3-pip \
-    && sudo -H python3 -m pip install jupyterlab jupyterlab-night \
     #  5. python packages: boto3, etc
     && sudo python3 -m pip install boto3  \
+    && sudo -H python3 -m pip install jupyterlab jupyterlab-night \
     #  6. upgrade python's awscli package
     && sudo python3 -m pip install --upgrade awscli \
     #  7.  awscli v2
