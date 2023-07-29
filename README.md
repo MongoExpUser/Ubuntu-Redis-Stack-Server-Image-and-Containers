@@ -2,7 +2,7 @@
 ## Redis Stack Servers with Auto Failover 
 
 <strong> Create Image and Deploy Containers for Redis Stack Servers (1 Primary and 2 Replicas) with Auto Failover for an IOT Application.</strong>
-<br><br>
+<br>
 
 ## Architectural Diagram
 ![Image description](https://github.com/MongoExpUser/Ubuntu-Redis-Stack-Server-Image-and-Containers/blob/main/architectural-diagram.png)
