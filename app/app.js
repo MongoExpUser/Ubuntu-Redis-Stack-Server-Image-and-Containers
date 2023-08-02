@@ -15,20 +15,20 @@
 # *                                                                                                                                     *
 # *  This module deploys:                                                                                                               *
 # *                                                                                                                                     *                                                                                                              *
-# *     1)  A simple Vanilla NodeJS HTTP or HTTPS Server                                                                                *
+# *     1)  A simple vanilla NodeJS HTTP or HTTPS server (No ExpressJS server framework)                                                *
 # *                                                                                                                                     *
 # *                                                                                                                                     *
 # *  For Production Deployment:                                                                                                         *
 # *                                                                                                                                     *
-# *     1) Add relevant middlewares                                                                                                     *
+# *     1) Add relevant middlewares.                                                                                                    *
 # *                                                                                                                                     *
-# *     2) Add relevant NodeJS native routes                                                                                            *
+# *     2) Add relevant NodeJS native application routes.                                                                               *
 # *                                                                                                                                     *
-# *     3) Add routes to applications written in other languages (Python, Java, PHP, Rust, C, etc.)                                     *
+# *     3) Add routes to applications written in other languages (Python, Java, PHP, Rust, C, etc.).                                    *
 # *                                                                                                                                     *                                                                                                                                     *
 # *     4) Ensure handlers for returning reponse from applications written in other languages are included.                             *
 # *                                                                                                                                     *                                                                                                                                     *
-# *     5) Add relevant web server codes (.html, .css and .js codes)                                                                    *
+# *     5) Add relevant web server codes (.html, .css and .js codes).                                                                   *
 # *                                                                                                                                     *                                                                                                                             *
 # *  Note:                                                                                                                              *
 # *                                                                                                                                     *
