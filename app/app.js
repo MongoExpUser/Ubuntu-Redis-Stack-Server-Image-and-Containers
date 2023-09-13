@@ -16,6 +16,7 @@
 # *  This module deploys:                                                                                                               *
 # *                                                                                                                                     *                                                                                                              *
 # *     1)  A simple vanilla NodeJS HTTP or HTTPS server (No ExpressJS server framework)                                                *
+# *         It is light-weight and can be used without ExpressJS server, but requires additional customization.                         *
 # *                                                                                                                                     *
 # *                                                                                                                                     *
 # *  For Production Deployment:                                                                                                         *
