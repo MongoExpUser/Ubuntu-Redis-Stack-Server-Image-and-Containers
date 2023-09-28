@@ -213,7 +213,7 @@ class AppVanilla
                         
                         
                         // serve html response example (for testing)
-                        const html = "<center><p><h2>Successful Web Server Deployment!</h2><p/></center>";
+                        const html = "<html><center><p><h2>Successful Web Server Deployment!</h2><p/></center></html>";
                         response.writeHead(200, { "Content-Type" : "text/html" });
                         response.end(html);
                     
