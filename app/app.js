@@ -212,7 +212,7 @@ class AppVanilla
                         //createdRoutes.ServeStaticFilesVanilla(get, request, response, staticFileOptions);   // static file server as routes: should come last
                         
                         
-                        // server html response example (for testing)
+                        // serve html response example (for testing)
                         const html = "<center><p><h2>Successful Web Server Deployment!</h2><p/></center>";
                         response.writeHead(200, { "Content-Type" : "text/html" });
                         response.end(html);
