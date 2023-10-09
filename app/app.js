@@ -195,8 +195,8 @@ class AppVanilla
                         //createdMiddlewares.BasicAuthenticationVanilla(request, response);                   // basic authentication middleware: should come after "logger" middleware (optional)
 
                         // 3. routes
-                        //createdRoutes.NodePythonJavaOthersVanilla(post, request, response);                  // invoke Python, Java, PHP, etc. codes' route as middleware
-                        //createdRoutes.ProxyServerVanilla(get, request, response);                            // proxy Server routes as middelware: should come after "Basic Authentication" (if Basic-Authen is included as middleware)
+                        //createdRoutes.NodePythonJavaOthersVanilla(post, request, response);                  // invoke Python, Java, PHP, etc. codes via route
+                        //createdRoutes.ProxyServerVanilla(get, request, response);                            // proxy Server routes: should come after "Basic Authentication" (if Basic-Authen is included as middleware)
                         //add more routes an deem necessary
                         // ..
                         // ..
