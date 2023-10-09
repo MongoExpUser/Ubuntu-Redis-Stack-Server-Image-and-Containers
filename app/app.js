@@ -37,10 +37,9 @@
 # *                                                                                                                                     *
 # *     2) Irrespective of open or proprietary implementations, the program's architecture remains thesame.                             *
 # *                                                                                                                                     *
-# *     3) Invoke as: sudo node /home/app/app.js  or sudo node --no-warnings /home/app/app.js                                           *
+# *     3) Invoke as: sudo node --inspect --watch --no-warnings /path/to/file/app.js                                                    *
 # *                                                                                                                                     *
 # **************************************************************************************************************************************/
-
 
 class AppVanilla
 {
